@@ -4,3 +4,25 @@ body {
 
 a {
   color: #00B7FF; }
+
+.weather {
+  border-style: solid;
+  border-width: 2px;
+  margin-bottom: 2px; }
+
+dl {
+  margin: 10px 0; }
+
+dt {
+  margin: 0;
+  float: left;
+  clear: left;
+  width: 200px; }
+
+dd {
+  margin: 4px 0 4px 200px; }
+
+dd:after {
+  content: '';
+  display: block;
+  clear: both; }

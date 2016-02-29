@@ -33,6 +33,7 @@ on Dokku.  It can be run locally with the same effect
 - There are two parts, the web server and a stand alone client. (client.js)
 - fork and then clone this repo locally
 - $`npm install`
+- Fire up mongoDB from shell with $`mongod` before starting app.
 - To start the app use $`gulp` from within the project directory.  This should precompile
 all asets and launch the welcome page in your browser on port 3000.  The welcome
 page serves only to let the user know that the server is up.

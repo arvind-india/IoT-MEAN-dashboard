@@ -1,5 +1,21 @@
 extends layout
 
 block content
+
   h1= title
   p Welcome to #{title}
+  h2 Weather Data:
+  p #{weather}
+  div(ng-controller="weatherCtrl as vm")
+    h2 Weather Data Measurements:
+    ul
+      li.data(ng-repeat="data in ( vm.all | orderBy: 'created':true | limitTo: 10)")
+        | {{ "Device ID: " + data.device + " temperature: " + data.temperature + "F, RH " + data.humidity + "%. " }}
+    //- div.weather(ng-repeat="data in ( vm.all | orderBy: 'created':true | limitTo: 10)")
+    //-   dl
+    //-     dt Device ID:
+    //-     dd {{ data.device }}
+    //-     dt Temperature
+    //-     dd {{ data.temperature + "F" }}
+    //-     dt Relative Humidity"
+    //-     dd {{ data.humidity + "%. " }}

@@ -3,16 +3,21 @@ var express = require('express'),
   mongoose = require('mongoose'),
   Weather = mongoose.model('Weather');
 
+
+
 module.exports = function (app) {
   app.use('/', router);
 };
 
-router.get('/', function (req, res, next) {
+router.get('/', function(req, res, next) {
+  res.render('index', {
+    title: 'Simulated IoT Weather Data Server'
+  });
+});
+router.get('/weather', function (req, res, next) {
   Weather.find(function (err, weather) {
     if (err) return next(err);
-    res.render('index', {
-      title: 'Simulated IoT Weather Data Server',
-      weather: weather
-    });
+    // console.log('sending weather:', weather);
+    res.json(weather);
   });
 });
