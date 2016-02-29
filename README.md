@@ -1,6 +1,8 @@
-#IoT Express:
+#IoT Express Heads Up Display:
 ## a node/Express based Web Server created simulate a live data feed from an IoT device.
-### This app is intended to live on a server where it will
+This app is intended to live on a server where it will provide a live stream of
+randomly generated data meant to simulate sensor readings.
+
 This project was initiated from Yeoman with the ['generator-express'](https://github.com/petecoop/generator-express) generator module.
 
 
@@ -32,7 +34,7 @@ on Dokku.  It can be run locally with the same effect
 - fork and then clone this repo locally
 - $`npm install`
 - To start the app use $`gulp` from within the project directory.  This should precompile
-all asets and launch the welcome page in your browser on port 3001.  The welcome
+all asets and launch the welcome page in your browser on port 3000.  The welcome
 page serves only to let the user know that the server is up.
 - At this point you will see a series of diagnostic and informative
 logs in your console. The server starts to transmit the mock sensor data only
@@ -41,8 +43,12 @@ on connection and while connected to a client.
 If both client and server are functional the server will begin to emmit mock
 sensor data.  The terminals will log the back and forth.
 
-
+## Testing
+-Tests are written with mocha.
+-Install: npm install -g mocha
+-Run: $`mocha` or `npm test`
 
 #### Source Links
+
 - https://github.com/petecoop/generator-express
 -

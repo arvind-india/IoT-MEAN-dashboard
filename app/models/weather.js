@@ -3,16 +3,20 @@
 var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
-var WeatherSchema = new Schema({
+var WeatherSchema = new Schema(
+  {
   device: String,
   temperature: String,
-  humidity: String
-});
+  humidity: String,
+  created: Date
+  }
+);
 
 WeatherSchema.virtual('date')
   .get(function(){
     return this._id.getTimestamp();
   });
 
-mongoose.model('Weather', WeatherSchema);
+
+module.exports = mongoose.model('Weather', WeatherSchema);
 

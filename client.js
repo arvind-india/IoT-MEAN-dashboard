@@ -1,3 +1,5 @@
+//unused - this code has been migrated to app.js.
+
 var socket = require('socket.io-client')('http://localhost:9010');
 
 socket.on('connect', function() { console.log('connected'); });

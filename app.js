@@ -4,6 +4,14 @@ var express = require('express'),
   glob = require('glob'),
   mongoose = require('mongoose');
 
+// app is set to localhost:3000, change this if needed in config.js
+
+//sets up socket.io and sets the port to listen to to 9010
+var socket = require('socket.io-client')('http://localhost:9010');
+
+// requires the Weather model module
+var Weather = require('./app/models/weather');
+
 mongoose.connect(config.db);
 var db = mongoose.connection;
 db.on('error', function () {
@@ -22,31 +30,60 @@ app.listen(config.port, function () {
   console.log('Express server listening on port ' + config.port);
 });
 
-// Setup SOCKET.IO Server
-var http = require('http');
-var server = http.createServer(app);
-var io = require('socket.io').listen(server);  //pass a http.Server instance
-server.listen(9010);  //listen on port 9010
+// Setup SOCKET.IO client
 
-io.on('connection', function(socket) {
-  console.log('sending news');
-  socket.emit('news', { hello: 'world' });
-  socket.on('my other event', function (data) {
-    console.log('received my other event with data:', data);
-  });
-  setInterval(() => {
-    console.log('sending the weather...');
-    socket.emit('weather',
-        { 'device': 'NodeSim1',
-          'temperature': Math.floor(Math.random()*(80-65+1)+65),
-          'humidity' : Math.floor(Math.random()*(99-20+1)+20),
-        });
-  }, 2000);
+
+socket.on('connect', function() { console.log('connected'); });
+socket.on('event', function(data) { console.log('event:', data); });
+socket.on('disconnect', function() { console.log('disconnected'); });
+
+socket.on('news', function(data) {
+  console.log('received sim input from remote IoT server:', data);
+  console.log('sending my other event');
+  socket.emit('my other event', { hello: 'this messages was sent from the client' });
 });
 
-function randomIntFromInterval(min,max)
-{
-    return Math.floor(Math.random()*(max-min+1)+min);
-}
+// socket.on('weather', function(data) {
+//   console.log('received weather:', data);
+//   var weatherData = new Weather ({
+//   device: data.device,
+//   temperature: data.temperature,
+//   humidity: data.humidity
+//   });
+//   weatherData.save(function(err){
+//     if (err) return handleError(err);
+//     console.log('Weather saved!');
+//   // Weather.find({}, function(err, data) {
+//   //   if (err) return handleError(err);
+//   //   data.forEach(function(data) {
+//   //     data.print();
+//   //   });
+//   });
+// });
+
+socket.on('weather', function(data) {
+  console.log('received weather:', data);
+  var weatherData = new Weather (
+    {
+    device: data.device,
+    temperature: data.temperature,
+    humidity: data.humidity,
+    created: new Date()
+  }
+  );
+
+  weatherData.save(function(err, data){
+    if (err) return handleError(err);
+    console.log('Weather saved!');
+  // Weather.find({}, function(err, data) {
+  //   if (err) return handleError(err);
+  //   data.forEach(function(data) {
+  //     data.print();
+  //   });
+  // });
+});
+
+
+});
 
 module.exports = app;
