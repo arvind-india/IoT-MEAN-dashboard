@@ -22,6 +22,7 @@ var models = glob.sync(config.root + '/app/models/*.js');
 models.forEach(function (model) {
   require(model);
 });
+
 var app = express();
 
 require('./config/express')(app, config);
@@ -31,8 +32,6 @@ app.listen(config.port, function () {
 });
 
 // Setup SOCKET.IO client
-
-
 socket.on('connect', function() { console.log('connected'); });
 socket.on('event', function(data) { console.log('event:', data); });
 socket.on('disconnect', function() { console.log('disconnected'); });

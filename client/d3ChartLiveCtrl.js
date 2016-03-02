@@ -1,3 +1,25 @@
+
+angular.module('IoTexpressHUD')
+//Service to interact with the socket library
+// .factory('socket', function (socketFactory) {
+//   var serverBaseUrl = 'http://localhost:3000';
+//   var myIoSocket = io.connect(serverBaseUrl);
+
+//   var socket = socketFactory({
+//       ioSocket: myIoSocket
+//   });
+
+//   return socket;
+// });
+
+.factory('socket', function(socketFactory){
+    //Creating connection with server
+    var socket = io.connect('http://localhost:3000');
+
+  return socket;
+});
+
+
 angular.module('IoTexpressHUD')
 .controller('d3ChartLiveCtrl', d3ChartLiveCtrl);
 
@@ -42,25 +64,17 @@ function d3ChartLiveCtrl($scope){
     //   $scope.$apply(); // update both chart
     // }, 1000);
 
-socket.on('weather', function(data) {
-    console.log('received weather:', data);
-    var y = data.temperature;
-    var x = 0;
-    if (!$scope.run) return;
-      $scope.data[0].values.push({ x: x,  y: y});
-      if ($scope.data[0].values.length > 20) $scope.data[0].values.shift();
-      x++;
+// socket.on('weather', function(data) {
+//     console.log('received weather:', data);
+//     var y = data.temperature;
+//     var x = 0;
+//     if (!$scope.run) return;
+//       $scope.data[0].values.push({ x: x,  y: y});
+//       if ($scope.data[0].values.length > 20) $scope.data[0].values.shift();
+//       x++;
 
-      $scope.$apply(); // update both chart
-    }
-);
+//       $scope.$apply(); // update both chart
+//     }
+// );
 
 }
-
-
-
-
-
-
-
-

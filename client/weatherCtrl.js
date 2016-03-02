@@ -1,6 +1,7 @@
 angular.module('IoTexpressHUD')
 .controller('weatherCtrl', weatherCtrl);
 
+// ensures that functions are properly compiled
 weatherCtrl.$inject = ['$http'];
 
 function weatherCtrl($http){
@@ -20,13 +21,14 @@ function weatherCtrl($http){
 
   getAllWeather();
 
-  vm.weatherDataD3 = [];
-  vm.getWeatherDataD3 = getWeatherDataD3;
+//this code has been moved to  d3chart.js
+  // vm.weatherDataD3 = [];
+  // vm.getWeatherDataD3 = getWeatherDataD3;
 
-  function getWeatherDataD3(){
-    d3.json('http://localhost:3000/weather', function(data){
-    vm.weatherDataD3 = data;
-    });
-  }
-  getWeatherDataD3();
+  // function getWeatherDataD3(){
+  //   d3.json('http://localhost:3000/weather', function(data){
+  //   vm.weatherDataD3 = data;
+  //   });
+  // }
+  // getWeatherDataD3();
 }

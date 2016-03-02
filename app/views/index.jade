@@ -24,11 +24,11 @@ block content
       li.data(ng-repeat="data in ( vm.weatherDataD3 | orderBy: 'created':true | limitTo: 2)")
         | {{ "D3 =>> Device ID: " + data.device + " temperature: " + data.temperature + "F, RH " + data.humidity + "%. " }}
 
-    div(ng-controller="d3Ctrl")
-      nvd3(options="options" data="data" class="with-3d-shadow with-transitions")
-
     div(ng-controller="d3ChartLiveCtrl")
       nvd3(options="options" data="data" class="with-3d-shadow with-transitions")
 
+
+    div(ng-controller="d3Ctrl")
+      nvd3(options="options" data="data" class="with-3d-shadow with-transitions")
 
 

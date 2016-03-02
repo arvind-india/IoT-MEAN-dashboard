@@ -76,7 +76,7 @@ function d3Ctrl($scope) {
     $scope.data = [
         {
             values: temp,      //values - represents the array of {x,y} data points
-            key: 'Sine Wave', //key  - the name of the series.
+            key: 'Temperature F', //key  - the name of the series.
             color: '#7777ff',  //color - optional: choose your own line color.
             strokeWidth: 2,
             classed: 'dashed'
