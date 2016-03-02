@@ -11,13 +11,15 @@ module.exports = function (app) {
 
 router.get('/', function(req, res, next) {
   res.render('index', {
-    title: 'Simulated IoT Weather Data Server'
+    title: 'IoT Weather Data Database with WebSockets to serve IoT data'
   });
 });
+
 router.get('/weather', function (req, res, next) {
   Weather.find(function (err, weather) {
     if (err) return next(err);
     // console.log('sending weather:', weather);
-    res.json(weather);
+  res.json(weather);
+
   });
 });

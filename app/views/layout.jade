@@ -5,11 +5,19 @@ html(lang='en')
     meta(name='viewport', content='width=device-width')
     //- script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js")
     script(src="/components/angular/angular.min.js")
+    script(src="/components/d3/d3.min.js")
+    script(src="/components/nvd3/build/nv.d3.min.js")
+    script(src="/components/angular-nvd3/dist/angular-nvd3.js")
     script(src="/index.js")
+    script(src="/d3chart.js")
+    script(src="/d3chartLive.js")
     script(src="/weatherCtrl.js")
     script(src="/weatherSvc.js")
+
+
     title= title
     block css
+      link(rel='stylesheet', href='/components/nvd3/build/nv.d3.css')
       link(rel='stylesheet', href='/css/style.css')
     block js
       if ENV_DEVELOPMENT

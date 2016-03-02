@@ -1,5 +1,5 @@
-angular.module('IoTexpressHUD', []);
-angular.module('IoTexpressHUD')
-.config(function() {
-  // add config such as routing here.
-});
+angular.module('IoTexpressHUD', ['nvd3']);
+// angular.module('IoTexpressHUD')
+// .config(function() {
+//   // add config such as routing here.
+// });

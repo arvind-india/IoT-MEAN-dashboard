@@ -30,3 +30,8 @@ dd:after {
     display: block;
     clear: both;
 }
+
+.dashed {
+    stroke-dasharray: 5,5;
+}
+

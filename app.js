@@ -43,23 +43,7 @@ socket.on('news', function(data) {
   socket.emit('my other event', { hello: 'this messages was sent from the client' });
 });
 
-// socket.on('weather', function(data) {
-//   console.log('received weather:', data);
-//   var weatherData = new Weather ({
-//   device: data.device,
-//   temperature: data.temperature,
-//   humidity: data.humidity
-//   });
-//   weatherData.save(function(err){
-//     if (err) return handleError(err);
-//     console.log('Weather saved!');
-//   // Weather.find({}, function(err, data) {
-//   //   if (err) return handleError(err);
-//   //   data.forEach(function(data) {
-//   //     data.print();
-//   //   });
-//   });
-// });
+
 
 socket.on('weather', function(data) {
   console.log('received weather:', data);
@@ -75,12 +59,6 @@ socket.on('weather', function(data) {
   weatherData.save(function(err, data){
     if (err) return handleError(err);
     console.log('Weather saved!');
-  // Weather.find({}, function(err, data) {
-  //   if (err) return handleError(err);
-  //   data.forEach(function(data) {
-  //     data.print();
-  //   });
-  // });
 });
 
 
