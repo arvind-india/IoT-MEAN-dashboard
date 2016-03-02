@@ -1,26 +1,5 @@
 
 angular.module('IoTexpressHUD')
-//Service to interact with the socket library
-// .factory('socket', function (socketFactory) {
-//   var serverBaseUrl = 'http://localhost:3000';
-//   var myIoSocket = io.connect(serverBaseUrl);
-
-//   var socket = socketFactory({
-//       ioSocket: myIoSocket
-//   });
-
-//   return socket;
-// });
-
-.factory('socket', function(socketFactory){
-    //Creating connection with server
-    var socket = io.connect('http://localhost:3000');
-
-  return socket;
-});
-
-
-angular.module('IoTexpressHUD')
 .controller('d3ChartLiveCtrl', d3ChartLiveCtrl);
 
 function d3ChartLiveCtrl($scope){
@@ -46,35 +25,25 @@ function d3ChartLiveCtrl($scope){
         }
     };
 
-    $scope.options1 = angular.copy($scope.options);
-    $scope.options1.chart.duration = 0;
-    $scope.options1.chart.yDomain = [-20,120];
+    // $scope.options1 = angular.copy($scope.options);
+    // $scope.options1.chart.duration = 0;
+    // $scope.options1.chart.yDomain = [-20,120];
 
     $scope.data = [{ values: [], key: 'Current Temperature' }];
 
     $scope.run = true;
 
-    // var x = 0;
-    // setInterval(function(){
-    //   if (!$scope.run) return;
-    //   $scope.data[0].values.push({ x: x,  y: Math.random() - 0.5});
-    //   if ($scope.data[0].values.length > 20) $scope.data[0].values.shift();
-    //   x++;
+    var x = 0;
+    socket.on('liveWeather', function(data) {
+        console.log('receivedlive Weather:', data);
+        var y = data.temperature;
 
-    //   $scope.$apply(); // update both chart
-    // }, 1000);
-
-// socket.on('weather', function(data) {
-//     console.log('received weather:', data);
-//     var y = data.temperature;
-//     var x = 0;
-//     if (!$scope.run) return;
-//       $scope.data[0].values.push({ x: x,  y: y});
-//       if ($scope.data[0].values.length > 20) $scope.data[0].values.shift();
-//       x++;
-
-//       $scope.$apply(); // update both chart
-//     }
-// );
-
+        if (!$scope.run) return;
+        $scope.data[0].values.push({ x: x,  y: y});
+        if ($scope.data[0].values.length > 20) $scope.data[0].values.shift();
+        x++;
+        console.log('LiveChart temperature data: ' + y);
+          $scope.$apply(); // update both chart
+        }
+    );
 }

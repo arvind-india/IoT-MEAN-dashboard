@@ -12,6 +12,6 @@
     "d3": "^3.5.16",
     "angular-nvd3": "^1.0.5",
     "socket.io": "^1.4.5",
-    "angular-socket-io": "^0.7.0"
+    // "angular-socket-io": "^0.7.0"
   }
 }

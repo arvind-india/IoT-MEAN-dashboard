@@ -1,37 +1,56 @@
 
 var express = require('express'),
   config = require('./config/config'),
+  // glob = module to allow matching of files using the patterns the shell uses, like stars and stuff.
   glob = require('glob'),
+  //mongoose = api for express to mongoDB.
   mongoose = require('mongoose');
 
-// app is set to localhost:3000, change this if needed in config.js
+var app = require('express')();
 
+// creates a server instance for this express app
+// app is set to localhost:3000, change this if needed in config.js
+var http = require('http').Server(app);
+
+http.listen(3000, function(){
+  console.log('listening on localhost:3000');
+});
+
+// allows access to socket.io functionality and library.
+var io = require('socket.io')(http);
 //sets up socket.io and sets the port to listen to to 9010
+//which corresponds to the port the weatherdata server uses to
+//broadcast data via web sockets
 var socket = require('socket.io-client')('http://localhost:9010');
 
 // requires the Weather model module
 var Weather = require('./app/models/weather');
 
+// mongoose will refer to the config.db file for config settings
 mongoose.connect(config.db);
 var db = mongoose.connection;
 db.on('error', function () {
   throw new Error('unable to connect to database at ' + config.db);
 });
 
+//sets up a glob for all models in the models folder
 var models = glob.sync(config.root + '/app/models/*.js');
 models.forEach(function (model) {
   require(model);
 });
 
-var app = express();
+//----------------------------------------------------------------------------
+//SERVER SIDE ROUTER FILE is app/controllers/home.js
+//----------------------------------------------------------------------------
+
+io.on('connection', function(socket){
+  console.log('a browser client connected');
+});
+
 
 require('./config/express')(app, config);
 
-app.listen(config.port, function () {
-  console.log('Express server listening on port ' + config.port);
-});
-
-// Setup SOCKET.IO client
+// Setup SOCKET.IO CLIENT OF THE WEATHER DATA SERVER
 socket.on('connect', function() { console.log('connected'); });
 socket.on('event', function(data) { console.log('event:', data); });
 socket.on('disconnect', function() { console.log('disconnected'); });
@@ -58,9 +77,9 @@ socket.on('weather', function(data) {
   weatherData.save(function(err, data){
     if (err) return handleError(err);
     console.log('Weather saved!');
-});
+  });
 
-
+  io.emit('liveWeather', data);
 });
 
 module.exports = app;
