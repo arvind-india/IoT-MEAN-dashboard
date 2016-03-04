@@ -28,7 +28,7 @@ var config = {
       name: 'iotexpress'
     },
     port: process.env.PORT || 3000,
-    db: 'mongodb://localhost/iotexpress-production'
+    db: 'mongodb://iotexpress-production'
   }
 };
 
