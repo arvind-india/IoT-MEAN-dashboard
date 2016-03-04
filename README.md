@@ -1,17 +1,19 @@
 #[IoT Express Dashboard](https://iot-express-dashboard.herokuapp.com/)
-##### a NodeJS/Express based web server with browser based client created to receive, store and display a live data feed from a remote server.  The remote server emits a simulated IoT device data feed. The live connection is provided by [socket.io](www.socket.io).
+#### a NodeJS/Express based web server with browser based client created to receive, store and display a live data feed from a remote server.  The remote server emits a simulated IoT device data feed. The live connection is provided by [socket.io](www.socket.io).
 
-#### View the live app at https://iot-express-dashboard.herokuapp.com/
-#### The webserver app is at
+##### View the live app at https://iot-express-dashboard.herokuapp.com/
+##### The [webserver app](https://iot-sim.herokuapp.com/) is at https://iot-sim.herokuapp.com/
+##### [Project GitHub Repo](https://github.com/thestevenbell/IoT-MEAN-dashboard) https://github.com/thestevenbell/IoT-MEAN-dashboard
 
 ### API
   - The RESTful endpoint is at https://iot-express-dashboard.herokuapp.com/weather.  It will accept .get requests only.
   - A curl request will return an array of JSON objects. ex. $ `curl https://iot-express-dashboard.herokuapp.com/weather`
 
 ### Process Documentation
-- ![IoTdashboardAppplanning](/IoTdashplanning1.jpg)
+- ![IoTdashboardAppplanning](/IoTdashplanning.jpg)
 - ![IoTdashboardAppplanning](/IoTdashplanning2.jpg)
 - ![IoTdashboardAppplanning](/IoTdashplanning3.jpg)
+- ![IoTdashboardAppplanning](/IoTdashplanning4.jpg)
 
 ### Key components, modules,  dependencies:
 - nodeJS
@@ -67,8 +69,8 @@ time via web sockets.
 (mongo does not start automatically on boot for most systems)
 
 ### Developing
-- Run npm install to install server dependencies.
-- Run bower install to install front-end dependencies.
+- Run $ `npm install` to install server dependencies.
+- Run $ `bower install` to install front-end dependencies.
 - Run mongod in a separate terminal window/tab to keep an instance of the MongoDB Daemon running
 - Run gulp serve to start the development server. It should automatically open the client in your browser when ready.
 
