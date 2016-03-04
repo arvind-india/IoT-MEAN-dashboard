@@ -4,7 +4,7 @@
 ##### View the live app at https://iot-express-dashboard.herokuapp.com/
 ##### The [webserver app](https://iot-sim.herokuapp.com/) is at https://iot-sim.herokuapp.com/
 ##### [Project GitHub Repo](https://github.com/thestevenbell/IoT-MEAN-dashboard) https://github.com/thestevenbell/IoT-MEAN-dashboard
-
+##### ![Screencast of the dashboard in action](/IoTexpressDashboard.mov)
 ### API
   - The RESTful endpoint is at https://iot-express-dashboard.herokuapp.com/weather.  It will accept .get requests only.
   - A curl request will return an array of JSON objects. ex. $ `curl https://iot-express-dashboard.herokuapp.com/weather`
