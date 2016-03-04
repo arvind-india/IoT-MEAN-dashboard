@@ -22,20 +22,40 @@ function d3ChartLiveCtrl($scope){
                    return d3.format('.01f')(d);
                 }
             }
-        }
+        },
+            title: {
+                enable: true,
+                text: 'Current Temperature'
+            },
+            subtitle: {
+                enable: true,
+                text: 'Simulated Temperature Measurements from Heroku Server.',
+                css: {
+                    'text-align': 'center',
+                    'margin': '10px 13px 0px 7px'
+                }
+            },
+            caption: {
+                enable: true,
+                html: '<b>Temperature.</b> Displays temperature readings at 5 second intervals.',
+                css: {
+                    'text-align': 'justify',
+                    'margin': '10px 13px 0px 7px'
+                }
+            }
     };
 
     // $scope.options1 = angular.copy($scope.options);
     // $scope.options1.chart.duration = 0;
     // $scope.options1.chart.yDomain = [-20,120];
 
-    $scope.data = [{ values: [], key: 'Current Temperature' }];
+    $scope.data = [{ values: [], key: 'Current Temperature', interpolate: 'basis' }];
 
     $scope.run = true;
 
     var x = 0;
     socket.on('liveWeather', function(data) {
-        console.log('receivedlive Weather:', data);
+        console.log('received liveWeather:', data);
         var y = data.temperature;
 
         if (!$scope.run) return;

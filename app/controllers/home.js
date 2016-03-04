@@ -11,7 +11,13 @@ module.exports = function (app) {
 
 router.get('/', function(req, res, next) {
   res.render('index', {
-    title: 'IoT Weather Data Database with WebSockets to serve IoT data'
+    title: 'IoTexpress: Sensor Data Dashboard'
+  });
+});
+
+router.get('/about', function(req, res, next) {
+  res.render('about', {
+    title: 'IoTexpress: Sensor Data Dashboard'
   });
 });
 
@@ -20,7 +26,6 @@ router.get('/weather', function (req, res, next) {
     if (err) return next(err);
     // console.log('sending weather:', weather);
   res.json(weather);
-
   });
 });
 

@@ -12,8 +12,9 @@ var app = require('express')();
 // app is set to localhost:3000, change this if needed in config.js
 var http = require('http').Server(app);
 
-http.listen(3000, function(){
-  console.log('listening on localhost:3000');
+var port = process.env.PORT || 3000;
+http.listen(port, function(){
+  console.log('listening on port ' + port);
 });
 
 // allows access to socket.io functionality and library.
@@ -21,7 +22,12 @@ var io = require('socket.io')(http);
 //sets up socket.io and sets the port to listen to to 9010
 //which corresponds to the port the weatherdata server uses to
 //broadcast data via web sockets
-var socket = require('socket.io-client')('http://localhost:9010');
+
+var simConnectString = process.env.SIMULATOR || 'http://localhost:3001';
+console.log('Connecting to IoT Simulator using:', simConnectString);
+var socket = require('socket.io-client')("https://iot-sim.herokuapp.com/");
+
+// var socket = require('socket.io-client')('https://iot-sim.herokuapp.com');
 
 // requires the Weather model module
 var Weather = require('./app/models/weather');

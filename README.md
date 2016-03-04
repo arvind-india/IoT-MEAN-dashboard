@@ -45,10 +45,7 @@ store and display a live data feed from a remote server.  The remote server emit
 - d3 graphs ported for use in AngularJS were derived from work by [Konstantin Skipor](http://krispo.github.io/angular-nvd3/#/quickstart).
 The examples were altered to derive graph data from the server data base and a live stream of simulated IoT sensor data delered in real
 time via web sockets.
-
-
-SERVER SIDE ROUTER FILE is app/controllers/home.js
-
+- SERVER SIDE ROUTER FILE is app/controllers/home.js
 
 
 ### Prerequisites

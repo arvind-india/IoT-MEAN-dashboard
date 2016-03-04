@@ -1,0 +1,62 @@
+doctype html
+html(lang="en")
+  head
+    title= title
+    meta( http-equiv='X-UA-Compatible', content='IE=edge' )
+    meta( name='viewport', content='width=device-width, initial-scale=1.0' )
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7", crossorigin="anonymous")
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
+    link(rel='stylesheet', href='css/style.css')
+    link(rel='stylesheet', href='css/about.css')
+
+    header
+    .container-fluid
+      div.card.card
+        h1.text-center= title
+        br
+        p.text-center#summary Welcome to IoTexpress.  This app represents the first
+          | step in the creation of a IoT device management platform.  In it's current
+          | form the dashboard shows a live feed from a web server over web sockets of
+          | simulated environmental data.  There is also a graph showing the last 1000
+          | reading taken.  These data are persisted in a mongoDB database and are
+          | accessed through a RESTful API.
+      .row#tech.card
+        h3.text-center Technologies Used:
+        ul.text-center
+          li HTML5
+          li CSS3
+          li Bootstrap 3
+          li Node.js
+          li Express.js
+          li jQuery
+          li Mongoose
+          li Mongo
+          li AngularJS
+          li Jade
+          li Socket.io
+          li D3/nvD3
+        .text-center#iconContainer
+            .row#icons
+                .col-xs-4#html5
+                .col-xs-4#css3
+                .col-xs-4#bootstrap
+                .col-xs-4#node
+                .col-xs-4#jquery
+                .col-xs-4#ex
+
+                .col-xs-4#mongoDB
+                .col-xs-4#mongoose
+                .col-xs-4#angular
+                .col-xs-4#jade
+                .col-xs-4#socket
+                .col-xs-4#d3
+      .row#spaceHolder
+      hr
+      br
+      .row.card
+        h3.text-center This splendid app created by:
+        div#maker
+          img(src="./img/StevenSlice.png")
+          p.title Steven Bell
+          p.description is a full stack Web Developer in Atlanta who before he found code was an entrepreneureal gourmet mushroom farmer and Landscape Architect.
+

@@ -1,0 +1,191 @@
+/*Default Style Changes to keep footer at bottom of all interior pages */
+html, body {
+  height: 100%;
+  border-radius: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+h1 {
+  font-family: 'Dosis', sans-serif;
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: 3em;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+h2 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+
+.container-fluid {
+  height: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+#about #summary {
+  width: 40%;
+  margin: 1% auto;
+}
+
+#about #tech ul {
+  width: 40%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+#about #tech {
+  margin: 5% auto;
+  border-radius: 0;
+}
+
+
+#icons {
+  width: 50%;
+  margin: 0 auto;
+}
+
+#bootstrap {
+   height: 71px;
+   width: 71px;
+   background-repeat: no-repeat;
+   background-image: url("../img/bootstrap.png");
+   background-size: cover;
+}
+
+#node {
+   height: 71px;
+   width: 71px;
+   background-repeat: no-repeat;
+   background-image: url("../img/node.png");
+   background-size: cover;
+}
+
+#html5 {
+   height: 71px;
+   width: 71px;
+   background-repeat: no-repeat;
+   background-image: url("../img/html5.png");
+   background-size: cover;
+}
+
+#css3 {
+   height: 71px;
+   width: 71px;
+   background-repeat: no-repeat;
+   background-image: url("../img/css3.png");
+   background-size: cover;
+}
+
+#jquery {
+   height: 71px;
+   width: 71px;
+   background-repeat: no-repeat;
+   background-image: url("../img/jquery.png");
+   background-size: cover;
+}
+
+#ex {
+   height: 71px;
+   width: 71px;
+   background-repeat: no-repeat;
+   background-image: url("../img/express.png");
+   background-size: cover;
+}
+
+#mongo {
+   height: 71px;
+   width: 71px;
+   background-repeat: no-repeat;
+   background-image: url("../img/mongodb.png");
+   background-size: cover;
+}
+
+#mongoose {
+   height: 71px;
+   width: 71px;
+   background-repeat: no-repeat;
+   background-image: url("../img/mongoose.png");
+   background-size: cover;
+}
+
+#angular {
+   height: 71px;
+   width: 71px;
+   background-repeat: no-repeat;
+   background-image: url("../img/angular.png");
+   background-size: cover;
+}
+
+#jade {
+   height: 71px;
+   width: 71px;
+   background-repeat: no-repeat;
+   background-image: url("../img/jade.png");
+   background-size: cover;
+}
+
+#socket {
+   height: 71px;
+   width: 71px;
+   background-repeat: no-repeat;
+   background-image: url("../img/socket.gif");
+   background-size: cover;
+}
+
+#d3 {
+   height: 71px;
+   width: 71px;
+   background-repeat: no-repeat;
+   background-image: url("../img/Logo_D3.svg.png");
+   background-size: cover;
+}
+
+
+#iconContainer {
+  height: 40%;
+}
+
+#spaceHolder {
+  height: 5%;
+  width: 100%;
+  clear: both;
+}
+
+#navImage{
+  background-image: url("../img/VandDlogo.png");
+  height: 50px;
+  width: 280px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 5% 0  0 10%;
+}
+
+.card {
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.62);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.62);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.62);
+  margin-bottom: 2.5em;
+    margin-right: 4em;
+  margin-left: 4em;
+  background-color: lightblue;
+  padding: 1.5em;
+}
+
+#maker{
+  margin: 0 auto;
+  text-align: center;
+}
+
+#maker > img {
+  margin-top: 1.4em;
+  margin-bottom: 2em;
+  -webkit-box-shadow: 8px 8px 5px 0px rgba(0,0,0,0.62);
+  -moz-box-shadow: 8px 8px 5px 0px rgba(0,0,0,0.62);
+  box-shadow: 8px 8px 5px 0px rgba(0,0,0,0.62);
+}

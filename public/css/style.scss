@@ -1,10 +1,57 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+h1 {
+  font-family: 'Dosis', sans-serif;
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: 3em;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
 }
+
+h2 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+
+.title.h4 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 2em;
+}
+
+.subtitle, .caption {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+}
+
+.nvd3.nv-noData {
+  font-family: 'Dosis', sans-serif;
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: 1.5em;
+}
+
 
 a {
   color: #00B7FF;
+}
+
+body {
+  padding-top: none;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #4ea6ca;
+}
+
+.container {
+  padding-top: none;
+  padding-left: 4em;
+  padding-bottom: 4em;
+  padding-right: 4em;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #4ea6ca;
+
 }
 
 .weather {
@@ -13,25 +60,14 @@ a {
   margin-bottom: 2px;
 }
 
-dl {
-    margin: 10px 0;
-}
-dt {
-    margin: 0;
-    float: left;
-    clear: left;
-    width: 200px;
-}
-dd {
-    margin: 4px 0 4px 200px;
-}
-dd:after {
-    content:'';
-    display: block;
-    clear: both;
+.card {
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.62);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.62);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.62);
+  margin-bottom: 2.5em;
+  background-color: lightblue;
+  padding: 1.5em;
 }
 
-.dashed {
-    stroke-dasharray: 5,5;
-}
+
 

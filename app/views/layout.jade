@@ -5,7 +5,7 @@ html(lang='en')
     meta(name='viewport', content='width=device-width')
     script(src="/components/angular/angular.min.js")
     script(src="/components/d3/d3.min.js")
-    script(src="/components/nvd3/build/nv.d3.min.js")
+    script(src="/components/nvd3/build/nv.d3.js")
     script(src="/components/angular-nvd3/dist/angular-nvd3.js")
     script(src="/socket.io-client-master/socket.io.js")
     script(src="/index.js")
@@ -16,6 +16,7 @@ html(lang='en')
 
     title= title
     block css
+      link(href='https://fonts.googleapis.com/css?family=Dosis:800|Lato:300,400' rel='stylesheet' type='text/css')
       link(rel='stylesheet', href='/components/nvd3/build/nv.d3.css')
       link(rel='stylesheet', href='/css/style.css')
     block js
