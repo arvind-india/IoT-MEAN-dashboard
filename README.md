@@ -1,8 +1,17 @@
-#IoT Express Heads Up Display
-### a NodeJS/Express based web server with browser based client created to receive,
-store and display a live data feed from a remote server.  The remote server emits a simulated IoT device data feed.
-  The live connection is provided by [socket.io](www.socket.io).
+#[IoT Express Dashboard](https://iot-express-dashboard.herokuapp.com/)
+##### a NodeJS/Express based web server with browser based client created to receive, store and display a live data feed from a remote server.  The remote server emits a simulated IoT device data feed. The live connection is provided by [socket.io](www.socket.io).
 
+#### View the live app at https://iot-express-dashboard.herokuapp.com/
+#### The webserver app is at
+
+### API
+  - The RESTful endpoint is at https://iot-express-dashboard.herokuapp.com/weather.  It will accept .get requests only.
+  - A curl request will return an array of JSON objects. ex. $ `curl https://iot-express-dashboard.herokuapp.com/weather`
+
+### Process Documentation
+- ![IoTdashboardAppplanning](/IoTdashplanning1.jpg)
+- ![IoTdashboardAppplanning](/IoTdashplanning2.jpg)
+- ![IoTdashboardAppplanning](/IoTdashplanning3.jpg)
 
 ### Key components, modules,  dependencies:
 - nodeJS
@@ -38,9 +47,9 @@ store and display a live data feed from a remote server.  The remote server emit
       - "gulp-livereload": "^3.8.0",
       - "gulp-plumber": "^1.0.0"
      }
-
 - Gulp
 - Jade
+- Hosted on Heroku
 - This project was initiated from Yeoman with the ['generator-express'](https://github.com/petecoop/generator-express) generator module.
 - d3 graphs ported for use in AngularJS were derived from work by [Konstantin Skipor](http://krispo.github.io/angular-nvd3/#/quickstart).
 The examples were altered to derive graph data from the server data base and a live stream of simulated IoT sensor data delered in real
