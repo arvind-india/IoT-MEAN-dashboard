@@ -3,11 +3,11 @@ html(lang='en')
   head
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width')
-    script(src="/js/angular/angular.min.js")
+    script(src="/js/angular.min.js")
     script(src="/js/d3.min.js")
     script(src="/js/nv.d3.js")
     script(src="/js/angular-nvd3.js")
-    script(src="/js/socket.io-client-master/socket.io.js")
+    script(src="/js/socket.io.js")
     script(src="/index.js")
     script(src="/d3chart.js")
     script(src="/d3ChartLiveCtrl.js")
@@ -16,7 +16,7 @@ html(lang='en')
     title= title
     block css
       link(href='https://fonts.googleapis.com/css?family=Dosis:800|Lato:300,400' rel='stylesheet' type='text/css')
-      link(rel='stylesheet', href='/css/nvd3/build/nv.d3.css')
+      link(rel='stylesheet', href='/css/nv.d3.css')
       link(rel='stylesheet', href='/css/style.css')
     block js
       if ENV_DEVELOPMENT
