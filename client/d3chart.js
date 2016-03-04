@@ -63,7 +63,7 @@ function d3Ctrl($scope) {
     getWeatherDataD3();
 
       function getWeatherDataD3(){
-        d3.json('http://localhost:3000/weather', function(data){
+        d3.json('https://iot-express-dashboard.herokuapp.com/weather', function(data){
             var data1000 = data.slice(data.length - 1000, data.length);
             console.log(data.length + "data.length");
             data1000.forEach(function(measurement, index){

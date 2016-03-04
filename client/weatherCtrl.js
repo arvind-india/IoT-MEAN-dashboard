@@ -11,7 +11,7 @@ function weatherCtrl($http){
 
   function getAllWeather() {
     $http
-      .get('http://localhost:3000/weather')
+      .get('https://iot-express-dashboard.herokuapp.com/weather')
       .then(function(response){
         vm.all = response.data;
         // console.log("vm.all: " + vm.all);
