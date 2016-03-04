@@ -24,8 +24,9 @@ module.exports = function(app, config) {
   }));
   app.use(cookieParser());
   app.use(compress());
-  app.use(express.static(config.root + '/public'));
-  app.use(express.static(config.root + '/components'));
+  // app.use(express.static(config.root + '/public'));
+  app.use(express.static(__dirname + '/public'));
+
   app.use(express.static(config.root + '/client'));
   app.use(methodOverride());
 
