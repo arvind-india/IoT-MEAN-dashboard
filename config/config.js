@@ -2,7 +2,7 @@ var path = require('path'),
     rootPath = path.normalize(__dirname + '/..'),
     env = process.env.NODE_ENV || 'development';
 
-    var MONGOLAB_URI = 'mongodb://heroku_lrxbpzth:akbe5oenp8jo81aiugpfpnhcce@ds019668.mlab.com:19668/heroku_lrxbpzth';
+var MONGOLAB_URI = 'mongodb://heroku_lrxbpzth:akbe5oenp8jo81aiugpfpnhcce@ds019668.mlab.com:19668/heroku_lrxbpzth';
 
 var config = {
   development: {
