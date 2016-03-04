@@ -23,7 +23,7 @@ var io = require('socket.io')(http);
 //which corresponds to the port the weatherdata server uses to
 //broadcast data via web sockets
 
-var simConnectString = process.env.SIMULATOR || 'http://localhost:3000';
+var simConnectString = process.env.SIMULATOR || 'https://iot-express-dashboard.herokuapp.com/weather';
 console.log('Connecting to IoT Simulator using:', simConnectString);
 var socket = require('socket.io-client')("https://iot-sim.herokuapp.com/");
 
