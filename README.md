@@ -1,10 +1,11 @@
-#[IoT Express Dashboard](https://iot-express-dashboard.herokuapp.com/)
-#### a NodeJS/Express based web server with browser based client created to receive, store and display a live data feed from a remote server.  The remote server emits a simulated IoT device data feed. The live connection is provided by [socket.io](www.socket.io).
+#[IoTexpress Dashboard](https://iot-express-dashboard.herokuapp.com/)
+#### The IoTexpress Dashboard is a NodeJS/Express based web server with browser based client created to receive, store and display a live data feed from a remote server/IoT device.  The [remote server](https://iot-sim.herokuapp.com/) emits a simulated IoT device data feed in JSON format. By setting up a simulated data feed with standard JSON formatted data web developers can create and test IoT software solutions without the added complexity of creating and deploying hardware devices.  The live connection is provided by [socket.io](www.socket.io).  Graphs are D3.JS with a [angular-nvd3](http://krispo.github.io/angular-nvd3/#/) wrapper for use in Angular.
 
-##### View the live app at https://iot-express-dashboard.herokuapp.com/
+##### View the live app at [https://iot-express-dashboard.herokuapp.com/](https://iot-express-dashboard.herokuapp.com/)
+>note: Heroku service for this app is available 18 hours per day and can be slow to respond if in sleep mode due to lack of activity on the app. Please be patient with the page load.  Do try again later if you recieve a non-404 error at the page linked above.
 ##### The [webserver app](https://iot-sim.herokuapp.com/) is at https://iot-sim.herokuapp.com/
 ##### [Project GitHub Repo](https://github.com/thestevenbell/IoT-MEAN-dashboard) https://github.com/thestevenbell/IoT-MEAN-dashboard
-##### ![Screencast of the dashboard in action](/IoTexpressDashboard.mov)
+##### A Screencast of the dashboard in action is included in the GitHub repo.
 ### API
   - The RESTful endpoint is at https://iot-express-dashboard.herokuapp.com/weather.  It will accept .get requests only.
   - A curl request will return an array of JSON objects. ex. $ `curl https://iot-express-dashboard.herokuapp.com/weather`
@@ -76,8 +77,9 @@ time via web sockets.
 
 
 ### Directions for use:
-- This code base was created with the intent of hosting online with digitial ocean
-on Dokku or Heroku. It can be run locally with the same effect
+- This code base was created with the intent of hosting online with Heroku.
+  - For deployment to heroku you will need to set up a [mLab account](https://elements.heroku.com/addons/mongolab) add-on.  Then add the MONGOLAB_URI as an process environmental variable.  This is configured in config/config.js.
+- It can be run locally with the same effect
 - There are two application required: the web server and a stand alone client.js
 found in /simple-socket-example/client.js or the more complete app IoTExpress
 - fork and then clone this repo locally
@@ -95,19 +97,18 @@ sensor data.  The terminals will log the back and forth.
 
 
 ### Notes and Gotchas:
-- socket.io installs via bower into the components directory.  With this build
-the required socket.io.js file for the front-end code in the index.html would
-not load when served locally.  (this is likely due to a glob setting that I have yet
-to track down to fix) The hack-around for this was to move the dependency
-code to the client directory and source it from there.
-
+- Ensure that upon deployment you have removed /components from the .gitignore file or else your libraries will not be along for the ride
+- The GitHub repo contains the directory /simple-socket-example.  This contains a simple websocket server and client for use in the command line.  It provides the websockets framework that was integrated into this app with browser client.
 
 ## Testing
--Tests are written with mocha.
--Install: npm install -g mocha
--Run: $`mocha` or `npm test`
+- Tests are written with mocha.
+- Install: npm install -g mocha
+- Run: $`mocha` or `npm test`
 
-#### Source Links
+#### Resource Links
 - https://github.com/petecoop/generator-express
+- http://nvd3.org/
+- https://d3js.org/
+- angular-nvd3 http://krispo.github.io/angular-nvd3/#/
 - www.socket.io
 
